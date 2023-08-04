@@ -56,7 +56,21 @@
                             This is a Responsive HTML5 Template brought to you by Tooplate for
                             100% free of charge. You can feel free to download, modify, and
                             use this layout for your websites.
-                            <img src="../img/captures/ARCHETYPE1.png" width="540" height="200">
+                            <div id="gallery" class="tm-content tm-content-small-top">
+                                <div class="tm-gallery-container">
+                                    <div class="tm-gallery tm-mb-80">
+                                        <figure class="effect-goliath tm-gallery-item">
+                                            <img src="../img/gallery/hano9.jpg" alt="Image"/>
+                                            <figcaption>
+                                                <h2>Number One</h2>
+                                                <p>Best Template Site</p>
+                                                <a href="../img/gallery/hano9.jpg">View more</a>
+                                            </figcaption>			
+                                        </figure>
+                                    </div>
+                                    <div class="tm-paging tm-mb-130"></div>
+                                </div>
+                            </div>
                         </p>
                         <hr class="tm-hr tm-mr">
                     </div>
@@ -64,7 +78,8 @@
                 
             </div>  
             <div class="tm-section-col tm-parallax" data-parallax="scroll" data-image-src="../img/hano1.jpg"></div>
-        </div>   
+        </div>  
+
     </main>                
 </body>
  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
@@ -133,20 +148,7 @@
                  
                  if(currentPage == i) {
                      $pager = $('<a href="javascript:void(0);" class="active tm-paging-link" '+pageAttribute+'="'+i+'"></a>');
-                 } else {
-                     $pager = $('<a href="javascript:void(0);" class="tm-paging-link" '+pageAttribute+'="'+i+'"></a>');
-                 }
-
-                 $pager.html(i);
-
-                 $pager.click(function(){ 
-                     $('.tm-paging-link').removeClass("active");
-                     $(this).addClass('active');
-                     var page = $(this).eq(0).attr(pageAttribute);
-                     showItems(page);
-                 });
-
-                 $pager.appendTo($('.tm-paging'));
+                 }  
              }
          }
 
@@ -167,7 +169,13 @@
 
          /****************** Magnific Popup ***********/
 
-
+         $('.tm-gallery').magnificPopup({
+             delegate: 'a',
+             type: 'image',
+             gallery: {
+                 enabled: true
+             }
+         });
      });
  </script>
 
