@@ -107,7 +107,18 @@ administrator MEGACORP_4dm1n!!
                              
                                 </code>
                             </pre>
-                            <img src="../img/captures/ARCHETYPE1.png" width="540" height="200">
+
+                                    <div class="tm-gallery tm-mb-80">
+                                        
+                                            <img src="../img/captures/ARCHETYPE1.png" alt="Image"/>
+                                            <figcaption>
+                                                <a href="../img/captures/ARCHETYPE1.png">View more</a>
+                                            </figcaption>			
+                                        </figure>
+                                    </div>
+                                    <div class="tm-paging tm-mb-130"></div>
+                                </div>
+                            </div>
                         </p>
                         <hr class="tm-hr tm-mr">
                     </div>
@@ -129,37 +140,95 @@ administrator MEGACORP_4dm1n!!
  </script>
  
  <!-- Code to append a click to copy button -->
+ <script src="../js/plugins.js"></script>
  <script>
-     var snippets = document.getElementsByTagName('pre');
-     var numberOfSnippets = snippets.length;
-     for (var i = 0; i < numberOfSnippets; i++) {
-         code = snippets[i].getElementsByTagName('code')[0].innerText;
- 
-         snippets[i].classList.add('hljs'); // append copy button to pre tag
- 
-         snippets[i].innerHTML = '<button class="hljs-copy">Copy</button>' + snippets[i].innerHTML; // append copy button
- 
-         snippets[i].getElementsByClassName('hljs-copy')[0].addEventListener("click", function () {
-             this.innerText = 'Copying..';
-             if (!navigator.userAgent.toLowerCase().includes('safari')) {
-                 navigator.clipboard.writeText(code);
-             } else {
-                 prompt("Clipboard (Select: ⌘+a > Copy:⌘+c)", code);
-             }
-             this.innerText = 'Copied!';
-             button = this;
-             setTimeout(function () {
-                 button.innerText = 'Copy';
-             }, 1000)
+     $(window).on("load", function() {
+         $('body').addClass('loaded');
+     });
+
+     $(function(){
+         
+         /*************** Navigation *****************/
+
+         const tmMainNav = $("#tm-main-nav");
+
+         tmMainNav.singlePageNav({
+             filter: ':not(.external)'
          });
-     }
+
+         $('.navbar-toggler').click(function(e) {
+             e.stopPropagation();
+             tmMainNav.toggleClass('show');
+         });
+
+         $("html").click(function(e) {
+             $("#tm-main-nav").removeClass("show");
+         });
+
+         /****************** Smooth Scrolling *****************/
+
+         $(".tm-btn-next").on('click', function(event) {
+             if (this.hash !== "") {
+                 event.preventDefault();
+                 var hash = this.hash;
+
+                 $('html, body').animate({
+                     scrollTop: $(hash).offset().top
+                 }, 800, function(){
+                     // window.location.hash = hash;
+                 });
+             }
+         });
+
+         $('.tm-brand-icon').on('click', function(event) {
+             $('html, body').animate({
+                     scrollTop: $('#intro').offset().top
+                 }, 800);
+         });
+
+         /****************** Gallery ******************/
+
+         const galleryItems = document.querySelector(".tm-gallery").children;
+         const itemsPerPage = 10;
+         const totalPages = Math.ceil(galleryItems.length / itemsPerPage);
+         const pageAttribute = 'data-page';
+
+         function setPagination(currentPage) {
+             for(let i = 1; i <= totalPages; i++) {
+                 var $pager = '';
+                 
+                 if(currentPage == i) {
+                     $pager = $('<a href="javascript:void(0);" class="active tm-paging-link" '+pageAttribute+'="'+i+'"></a>');
+                 }  
+             }
+         }
+
+         function showItems(currentPage) {
+             for(let i = 0; i < galleryItems.length; i++) {
+                 galleryItems[i].classList.remove("show");
+                 galleryItems[i].classList.add("hide");
+
+                 if(i >= (currentPage * itemsPerPage) - itemsPerPage && i < currentPage * itemsPerPage) {
+                     galleryItems[i].classList.remove("hide");
+                     galleryItems[i].classList.add("show");
+                 }
+             }
+         }
+
+         setPagination(1);
+         showItems(1);
+
+         /****************** Magnific Popup ***********/
+
+         $('.tm-gallery').magnificPopup({
+             delegate: 'a',
+             type: 'image',
+             gallery: {
+                 enabled: true
+             }
+         });
+     });
  </script>
- <style>
-     .hljs-copy {
-         float: right;
-         cursor: pointer;
-     }
- </style>
 
 
 </html>
