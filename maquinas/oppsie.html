@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertex HTML Template</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet"> <!-- https://fonts.google.com/specimen/Kumbh+Sans -->
+    <link rel="stylesheet" href="../fontawesome/css/all.min.css">  <!-- https://fontawesome.com/-->  
+    <link rel="stylesheet" href="../css/magnific-popup.css">       <!-- https://dimsemenov.com/plugins/magnific-popup/ -->
+    <link rel="stylesheet" href="../css/tooplate-vertex.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark-dimmed.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<!--
+
+Tooplate 2124 Vertex
+
+https://www.tooplate.com/view/2124-vertex
+
+-->
+
+</head>
+<body>
+
+    <!-- Nav -->
+    <nav class="tm-nav">                               
+                <a href="../index.html" class="nav-link1 ">
+                    Volver
+    </nav>
+
+    <div id="intro" class="tm-section">
+        <!-- Intro left -->
+        <div class="tm-section-col tm-content">
+            <div class="tm-media ">
+                <div class="tm-media-body">
+                    <h2><a href="folder/test.html" class="tm-text-primary">OOPSIE</a></h2>
+                    <p class="tm-mb-20 tm-text-small">
+                        Esta maquina es una de tier2, un escalon por debajo antes de pasar a las maquinas con buenos retos de hack the box,
+                         en esta instancia primero deberiamos conectarnos a la vpn que nos proporciona hack the box mediante openvpn,
+                          no olvide crear su carpeta de hack the box para estar mas a gusto.
+                    <p>INICIAMOS CON ESTE SCRIPT:</p>
+                        <pre class="align-center">
+                            <code class="language-bash">
+ Sudo open vpn starting point yoursuser.ovpn
+                            </code>
+                        </pre>
+                        <p>deberia salirte algo así:</p>    
+                                <div class="tm-gallery tm-mb-80">
+                                    
+                                        <img src="../img/maquinas/oopsie1.png" alt="Image"/>
+                                        <figcaption>
+                                            <a href="../img/maquinas/oopsie1.png">View more</a>
+                                        </figcaption>			
+                                    </figure>
+                                </div>
+
+                                <div class="tm-paging tm-mb-130"></div>
+                            </div>
+                        </div>
+                    </p>
+                </div>
+            </div> 
+            
+        </div>  
+        
+    </div>                 
+</body>
+ <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/go.min.js"></script>
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+ 
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/androidstudio.css" />
+ 
+ <script>
+     hljs.highlightAll(); // initialize highlighting
+ </script>
+ 
+ <!-- Code to append a click to copy button -->
+ <script src="../js/plugins.js"></script>
+ <script>
+     $(window).on("load", function() {
+         $('body').addClass('loaded');
+     });
+
+     $(function(){
+         
+         /*************** Navigation *****************/
+
+         const tmMainNav = $("#tm-main-nav");
+
+         tmMainNav.singlePageNav({
+             filter: ':not(.external)'
+         });
+
+         $('.navbar-toggler').click(function(e) {
+             e.stopPropagation();
+             tmMainNav.toggleClass('show');
+         });
+
+         $("html").click(function(e) {
+             $("#tm-main-nav").removeClass("show");
+         });
+
+         /****************** Smooth Scrolling *****************/
+
+         $(".tm-btn-next").on('click', function(event) {
+             if (this.hash !== "") {
+                 event.preventDefault();
+                 var hash = this.hash;
+
+                 $('html, body').animate({
+                     scrollTop: $(hash).offset().top
+                 }, 800, function(){
+                     // window.location.hash = hash;
+                 });
+             }
+         });
+
+         $('.tm-brand-icon').on('click', function(event) {
+             $('html, body').animate({
+                     scrollTop: $('#intro').offset().top
+                 }, 800);
+         });
+
+         /****************** Gallery ******************/
+
+         const galleryItems = document.querySelector(".tm-gallery").children;
+         const itemsPerPage = 10;
+         const totalPages = Math.ceil(galleryItems.length / itemsPerPage);
+         const pageAttribute = 'data-page';
+
+         function setPagination(currentPage) {
+             for(let i = 1; i <= totalPages; i++) {
+                 var $pager = '';
+                 
+                 if(currentPage == i) {
+                     $pager = $('<a href="javascript:void(0);" class="active tm-paging-link" '+pageAttribute+'="'+i+'"></a>');
+                 }  
+             }
+         }
+
+         function showItems(currentPage) {
+             for(let i = 0; i < galleryItems.length; i++) {
+                 galleryItems[i].classList.remove("show");
+                 galleryItems[i].classList.add("hide");
+
+                 if(i >= (currentPage * itemsPerPage) - itemsPerPage && i < currentPage * itemsPerPage) {
+                     galleryItems[i].classList.remove("hide");
+                     galleryItems[i].classList.add("show");
+                 }
+             }
+         }
+
+         setPagination(1);
+         showItems(1);
+
+         /****************** Magnific Popup ***********/
+
+         $('.tm-gallery').magnificPopup({
+             delegate: 'a',
+             type: 'image',
+             gallery: {
+                 enabled: true
+             }
+         });
+     });
+ </script>
+
+
+</html>
